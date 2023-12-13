@@ -1,0 +1,29 @@
+{
+  "name": "react-local-storage",
+  "version": "1.0.0",
+  "description": "custom react hook for managing localstorage",
+  "main": "useLocalStorage.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dytra/react-local-storage.git"
+  },
+  "keywords": [
+    "react",
+    "localstorage",
+    "hook"
+  ],
+  "author": "dytra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dytra/react-local-storage/issues"
+  },
+  "homepage": "https://github.com/dytra/react-local-storage#readme",
+  "devDependencies": {
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.17",
+    "typescript": "^5.3.3"
+  }
+}
