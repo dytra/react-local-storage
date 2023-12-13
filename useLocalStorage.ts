@@ -1,4 +1,4 @@
-import { useState, Dispatch, SetStateAction } from 'react';
+import { useState, Dispatch, SetStateAction, useEffect } from 'react';
 
 
 type SetValue<T> = Dispatch<SetStateAction<T>>;
@@ -22,6 +22,17 @@ const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>, () =
         setValue(initialValue);
       localStorage.removeItem(key);
   };
+
+  useEffect(() => {
+    if(key && initialValue) {
+      updateValue(initialValue);
+      return;
+    } 
+    const storageValue = localStorage.getItem(key);
+    if(key && storageValue) {
+      setValue(storageValue as SetStateAction<T>);
+    }
+  },[]);
 
       return [value, updateValue, deleteValue];
 };
