@@ -30,7 +30,7 @@ const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>, () =
     } 
     const storageValue = localStorage.getItem(key);
     if(key && storageValue) {
-      setValue(storageValue as SetStateAction<T>);
+      updateValue(storageValue as SetStateAction<T>);
     }
   },[]);
 
