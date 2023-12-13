@@ -42,7 +42,6 @@ const useLocalStorage = <T>(
   }, []);
 
   useEffect(() => {
-    console.log("storedValue change ")
   },[storedValue]);
 
   return [value, updateValue, deleteValue];
