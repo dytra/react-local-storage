@@ -1,5 +1,5 @@
 {
-  "name": "react-local-storage",
+  "name": "react-storage-helper",
   "version": "1.0.0",
   "description": "custom react hook for managing localstorage",
   "main": "useLocalStorage.ts",
