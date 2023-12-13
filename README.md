@@ -15,7 +15,7 @@ import React from 'react';
 import useLocalStorage from 'react-storage-helper';
 
 const MyComponent = () => {
-  const [data, setData, deleteData] = useLocalStorage('myData', 'default value');
+  const [data, setData, deleteData] = useLocalStorage('mySecret');
 
   return (
     <div>
