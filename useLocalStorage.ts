@@ -6,7 +6,7 @@ type SetValue<T> = Dispatch<SetStateAction<T>>;
 const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>, () => void] => {
   // Read from localStorage
   const storedValue = localStorage.getItem(key);
-  const initial = storedValue ? storedValue : initialValue;
+  const initial = storedValue ? storedValue : null;
 
   // State to hold the current value
   const [value, setValue] = useState<T>(initial as T);
