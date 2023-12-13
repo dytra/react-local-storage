@@ -24,13 +24,10 @@ const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>, () =
   };
 
   useEffect(() => {
-    if(key && initialValue) {
-      updateValue(initialValue);
-      return;
-    } 
+    if(!key) return;
     const storageValue = localStorage.getItem(key);
-    if(key && storageValue) {
-      updateValue(storageValue as SetStateAction<T>);
+    if(storageValue) {
+      setValue(storageValue as SetStateAction<T>)
     }
   },[]);
 
