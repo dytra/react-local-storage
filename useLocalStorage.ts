@@ -18,6 +18,7 @@ const useLocalStorage = <T>(
     setValue(newValue);
     const valueToStore =
       newValue instanceof Object ? JSON.stringify(newValue) : newValue;
+    console.log("isObject ",newValue instanceof Object);
     localStorage.setItem(key, valueToStore as string);
   };
 
