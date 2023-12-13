@@ -14,7 +14,7 @@ const useLocalStorage = <T>(key: string, initialValue: T): [T, SetValue<T>, () =
     // Function to update the value in localStorage and the state
     const updateValue: SetValue<T> = (newValue) => {
       setValue(newValue);
-      localStorage.setItem(key, JSON.stringify(newValue));
+      localStorage.setItem(key, newValue as string);
   };
 
   // Function to delete the item from localStorage and the state
