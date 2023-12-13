@@ -11,12 +11,14 @@ const useLocalStorage = <T>(
   const initial = storedValue ? storedValue : null;
 
   // State to hold the current value
-  const [value, setValue] = useState<T>(initial as T);
+  const [value, setValue] = useState<T>(null as T);
 
   // Function to update the value in localStorage and the state
   const updateValue: SetValue<T> = (newValue) => {
     setValue(newValue);
-    localStorage.setItem(key, newValue as string);
+    const valueToStore =
+      newValue instanceof Object ? JSON.stringify(newValue) : newValue;
+    localStorage.setItem(key, valueToStore as string);
   };
 
   // Function to delete the item from localStorage and the state
@@ -29,7 +31,13 @@ const useLocalStorage = <T>(
     if (!key) return;
     const storageValue = localStorage.getItem(key);
     if (storageValue) {
-      setValue(storageValue as SetStateAction<T>);
+      try {
+        const parsedValue = JSON.parse(storageValue);
+        setValue(parsedValue as SetStateAction<T>);
+      } catch (error) {
+        // If parsing fails, set the value as is
+        setValue(storageValue as SetStateAction<T>);
+      }
     }
   }, []);
 
