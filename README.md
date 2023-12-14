@@ -1,6 +1,6 @@
 # react-storage-helper
 
-A custom React hook for managing data in `localStorage` easily.
+A custom React hook for managing data from localStorage easily.
 
 ## Installation
 
