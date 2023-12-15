@@ -11,7 +11,7 @@ const useLocalStorage = <T>(
   const initial = storedValue ? storedValue : null;
 
   // State to hold the current value
-  const [value, setValue] = useState<T>(null as T);
+  const [value, setValue] = useState<T>(initial as T);
 
   // Function to update the value in localStorage and the state
   const updateValue: SetValue<T> = (newValue) => {
