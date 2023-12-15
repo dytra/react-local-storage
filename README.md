@@ -2,6 +2,8 @@
 
 A custom React hook for managing data from localStorage easily.
 
+[![npm version](https://badge.fury.io/js/react-storage-helper.svg)](https://badge.fury.io/js/react-storage-helper)
+
 ## Installation
 
 ```bash
